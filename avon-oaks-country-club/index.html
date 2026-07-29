@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Avon Oaks Country Club — Northeast Ohio's Destination Country Club</title>
+<meta name="description" content="Avon Oaks Country Club — golf, tennis, swimming, dining, and junior programs in Avon, Ohio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#173d2c;      /* deep oak green */
+    --green-2:#0f2a1e;
+    --gold:#b0894f;        /* brass accent */
+    --gold-2:#9a7538;
+    --cream:#f6f2ea;
+    --paper:#fbf9f4;
+    --ink:#1c211d;
+    --muted:#5c665e;
+    --line:rgba(0,0,0,.10);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:600;color:var(--gold-2)}
+  .btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.04em;padding:14px 28px;border-radius:2px;transition:.2s}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-2)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{background:#fff;color:var(--green)}
+  .btn-outline{border:1px solid var(--green);color:var(--green)}
+  .btn-outline:hover{background:var(--green);color:#fff}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--green-2);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:flex;align-items:center;gap:14px;color:#fff}
+  .brand img{height:44px;width:auto}
+  .brand .name{font-family:var(--serif);font-size:20px;line-height:1.05;color:#fff}
+  .brand .name small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:2px}
+  .menu{display:flex;align-items:center;gap:30px}
+  .menu a{color:rgba(255,255,255,.82);font-size:14px;font-weight:500;letter-spacing:.02em}
+  .menu a:hover{color:#fff}
+  .menu .btn{color:#fff}
+  .navtoggle{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
+
+  /* Hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;
+    background:linear-gradient(180deg,rgba(15,42,30,.55),rgba(15,42,30,.72)),url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Golf1.jpg') center/cover no-repeat}
+  .hero .wrap{padding-top:60px;padding-bottom:60px}
+  .hero .eyebrow{color:var(--gold)}
+  .hero h1{font-size:clamp(44px,7vw,86px);margin:18px 0 0;max-width:14ch}
+  .hero p{font-size:clamp(17px,2vw,21px);max-width:46ch;margin:22px 0 34px;color:rgba(255,255,255,.9)}
+  .hero .cta{display:flex;gap:16px;flex-wrap:wrap}
+
+  /* Sections */
+  section{padding:96px 0}
+  .center{text-align:center;max-width:640px;margin:0 auto}
+  .center h2{font-size:clamp(32px,4.5vw,48px);margin:14px 0 0}
+  .center p{color:var(--muted);font-size:17px;margin-top:16px}
+
+  /* Amenity grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(23,61,44,.13)}
+  .card .ph{height:210px;background-size:cover;background-position:center}
+  .card .body{padding:26px 26px 30px}
+  .card h3{font-size:26px;color:var(--green)}
+  .card p{color:var(--muted);font-size:15px;margin:10px 0 0}
+
+  /* Membership band */
+  .band{background:var(--green);color:#fff;text-align:center}
+  .band .eyebrow{color:var(--gold)}
+  .band h2{font-size:clamp(32px,4.5vw,50px);margin:16px auto 0;max-width:18ch;color:#fff}
+  .band p{max-width:52ch;margin:20px auto 34px;color:rgba(255,255,255,.85);font-size:18px}
+
+  /* Split about */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;background:var(--cream)}
+  .split .pic{min-height:460px;background:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Dining.jpg') center/cover no-repeat}
+  .split .txt{padding:72px 60px}
+  .split h2{font-size:clamp(30px,4vw,44px);color:var(--green);margin:12px 0 0}
+  .split p{color:var(--muted);font-size:16px;margin-top:18px}
+  .stats{display:flex;gap:40px;margin-top:34px}
+  .stats .n{font-family:var(--serif);font-size:40px;color:var(--gold-2);line-height:1}
+  .stats .l{font-size:13px;color:var(--muted);margin-top:6px}
+
+  /* Visit / contact */
+  .visit{background:var(--paper)}
+  .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:52px;align-items:start}
+  .vgrid h3{font-size:24px;color:var(--green);margin-bottom:14px}
+  .info div{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .info span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-weight:600;margin-bottom:3px}
+  .map{min-height:340px;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+  .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+  /* Footer */
+  footer{background:var(--green-2);color:rgba(255,255,255,.72);padding:60px 0 34px}
+  .fgrid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  .fbrand{font-family:var(--serif);font-size:22px;color:#fff}
+  .fbrand small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:6px}
+  footer a{color:rgba(255,255,255,.72)}
+  footer a:hover{color:#fff}
+  .fnav{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
+  .fbot{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:860px){
+    .menu{position:fixed;inset:76px 0 auto 0;flex-direction:column;gap:0;background:var(--green-2);padding:8px 0 20px;display:none;border-bottom:1px solid rgba(255,255,255,.1)}
+    .menu.open{display:flex}
+    .menu a{width:100%;padding:14px 24px}
+    .menu .btn{margin:12px 24px 0}
+    .navtoggle{display:block}
+    .grid{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
+    .split .pic{min-height:280px}
+    .split .txt{padding:48px 28px}
+    .vgrid{grid-template-columns:1fr;gap:36px}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="https://www.avonoakscc.com/_filelib/ImageGallery/Design/logo_276px.png" alt="Avon Oaks Country Club">
+      <span class="name">Avon Oaks<small>Country Club</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#golf">Golf</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#membership">Membership</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-gold" href="https://www.avonoakscc.com/Join">Become a Member</a>
+    </nav>
+    <button class="navtoggle" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Avon, Ohio · Established Private Club</span>
+    <h1>Northeast Ohio's Destination Country Club</h1>
+    <p>Championship golf, tennis, swimming, and dining — one place your family will call home all year.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://www.avonoakscc.com/Join">Become a Member</a>
+      <a class="btn btn-ghost" href="#amenities">Explore the Club</a>
+    </div>
+  </div>
+</section>
+
+<section id="amenities">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">The Experience</span>
+      <h2>Everything a club should be</h2>
+      <p>A full-service country club built around golf, racquets, water, and the table — with programs for every generation.</p>
+    </div>
+    <div class="grid">
+      <article class="card" id="golf">
+        <div class="ph" style="background-image:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Golf1.jpg')"></div>
+        <div class="body">
+          <h3>Golf</h3>
+          <p>A mature, tree-lined course and a professional staff that keeps members playing their best — from first lesson to club championship.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-image:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Tennis.jpg')"></div>
+        <div class="body">
+          <h3>Tennis</h3>
+          <p>Well-kept courts, clinics, and league play for every level, with instruction for players just picking up a racquet.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-image:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Swim.jpg')"></div>
+        <div class="body">
+          <h3>Swimming</h3>
+          <p>A summer built around the pool — swim team, lessons, and long afternoons that families spend together.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-image:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Dining.jpg')"></div>
+        <div class="body">
+          <h3>Dining &amp; Events</h3>
+          <p>Member dining and a setting made for weddings, celebrations, and business gatherings of every size.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-image:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Tennis.jpg')"></div>
+        <div class="body">
+          <h3>Junior Programs</h3>
+          <p>Golf, tennis, and swim programs that give kids a summer of their own and a place to grow up.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-image:url('https://www.avonoakscc.com/_filelib/ImageGallery/Design/Golf1.jpg')"></div>
+        <div class="body">
+          <h3>Member Life</h3>
+          <p>The calendar that ties it together — socials, holidays, and standing traditions members plan their year around.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="split">
+  <div class="pic" aria-hidden="true"></div>
+  <div class="txt">
+    <span class="eyebrow">The Club</span>
+    <h2>A private club, minutes from home</h2>
+    <p>Avon Oaks has been Northeast Ohio's destination country club for decades — a place where members golf, dine, and gather without the drive to the city. Everything under one membership, kept up to the standard members expect.</p>
+    <p>Come see the course, meet the staff, and find the membership that fits your family.</p>
+    <div class="stats">
+      <div><div class="n">5</div><div class="l">Golf · Tennis · Swim · Dining · Juniors</div></div>
+      <div><div class="n">All&nbsp;year</div><div class="l">A calendar that never goes quiet</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="membership">
+  <div class="wrap">
+    <span class="eyebrow">Membership</span>
+    <h2>Belong to something worth driving past the others for</h2>
+    <p>Membership means the course, the courts, the pool, and the table — plus a community that plans its year around this place. Ask about the membership that fits your family.</p>
+    <a class="btn btn-gold" href="https://www.avonoakscc.com/Join">Request Membership Info</a>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Plan Your Visit</span>
+      <h2>Come see Avon Oaks</h2>
+    </div>
+    <div class="vgrid">
+      <div>
+        <h3>Contact &amp; Location</h3>
+        <div class="info">
+          <div><span>Address</span>32300 Detroit Road, Avon, OH 44011</div>
+          <div><span>Phone</span><a href="tel:+14408920660">440.892.0660</a></div>
+          <div><span>Email</span><a href="mailto:aocc@avonoakscc.com">aocc@avonoakscc.com</a></div>
+          <div><span>Membership</span><a href="mailto:apatterson@avonoakscc.com">apatterson@avonoakscc.com · 440.575.1149</a></div>
+          <div><span>Follow</span><a href="https://www.facebook.com/avonoakscc/">Facebook</a> &nbsp;·&nbsp; <a href="https://twitter.com/avonoakscc">Twitter/X</a></div>
+        </div>
+        <a class="btn btn-outline" style="margin-top:26px" href="https://www.avonoakscc.com/Join">Become a Member</a>
+      </div>
+      <div class="map">
+        <iframe title="Map to Avon Oaks Country Club" loading="lazy" src="https://www.google.com/maps?q=32300+Detroit+Road,+Avon,+OH+44011&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">Avon Oaks Country Club<small>Northeast Ohio's Destination Country Club</small></div>
+      <nav class="fnav">
+        <a href="#golf">Golf</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#membership">Membership</a>
+        <a href="#visit">Visit</a>
+        <a href="https://www.avonoakscc.com/Join">Join</a>
+      </nav>
+    </div>
+    <div class="fbot">
+      <span>32300 Detroit Road, Avon, OH 44011 · 440.892.0660</span>
+      <span>© 2026 Avon Oaks Country Club</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
